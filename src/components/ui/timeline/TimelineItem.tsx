@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-export type TimelineItemProps = {
+export type TTimelineItemProps = {
   title: ReactNode
   bullet?: ReactNode
   children: ReactNode
@@ -60,7 +60,7 @@ export const TimelineItem = ({
   className,
   lineSize,
   ...props
-}: TimelineItemProps) => {
+}: TTimelineItemProps) => {
   return (
     <li
       className={cn(

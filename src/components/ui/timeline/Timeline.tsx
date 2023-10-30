@@ -1,14 +1,14 @@
-import { TimelineItem, TimelineItemProps } from './TimelineItem'
+import { TimelineItem, TTimelineItemProps } from './TimelineItem'
 
-export type TimelinePropsItem = Omit<
-  TimelineItemProps,
+export type TTimelinePropsItem = Omit<
+  TTimelineItemProps,
   'isActive' | 'isActiveBullet' | 'bulletSize' | 'lineSize'
 > & {
   bulletSize?: number
 }
 
-export type TimelineProps = {
-  items: TimelinePropsItem[]
+export type TTimelineProps = {
+  items: TTimelinePropsItem[]
   activeItem: number
   bulletSize?: number
   lineSize?: number
@@ -25,7 +25,7 @@ export const Timeline = ({
   activeItem,
   bulletSize = 16,
   lineSize = 2,
-}: TimelineProps) => {
+}: TTimelineProps) => {
   return (
     <ul
       style={{

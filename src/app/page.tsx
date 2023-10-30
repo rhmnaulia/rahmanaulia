@@ -1,15 +1,15 @@
 import PostCard from '@/components/PostCard'
 import ProjectCard from '@/components/ProjectCard'
 import Socials from '@/components/Socials'
-import { posts } from '@/data/dummy'
 import presentation from '@/data/presentation'
 import projects from '@/data/projects'
 import Link from 'next/link'
+import { allPosts } from 'contentlayer/generated'
 
 export default function Home() {
   return (
     <section className='w-full flex flex-col gap-20'>
-      <article className='flex flex-col gap-4'>
+      <article className='flex flex-col gap-6'>
         <h1 className='text-2xl dark:text-white font-bold tracking-tighter'>
           {presentation.title}
         </h1>
@@ -29,7 +29,7 @@ export default function Home() {
           </Link>
         </header>
         <div className='flex flex-col md:flex-row gap-4 justify-between'>
-          {posts.slice(0, 2).map((post, index) => (
+          {allPosts.slice(0, 2).map((post, index) => (
             <PostCard post={post} key={index} />
           ))}
         </div>

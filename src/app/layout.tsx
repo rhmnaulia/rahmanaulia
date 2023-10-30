@@ -25,7 +25,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className='mx-auto flex min-h-screen max-w-[736px] flex-col gap-9 px-6 py-6 md:gap-20 text-sm dark:text-neutral-200'>
+          <main className='mx-auto flex min-h-screen max-w-[736px] flex-col gap-9 px-6 py-6 md:gap-20  dark:text-neutral-200'>
             <Header />
             {children}
             <Footer />

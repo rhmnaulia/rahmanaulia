@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { Card, CardDescription, CardHeader, CardTitle } from './ui/card'
+import { Post } from 'contentlayer/generated'
+import formatDate from '@/lib/formatDate'
 
 type TPostCardProps = {
-  post: { description: string; slug: string; title: string; date: string }
+  post: Post
 }
 
 const PostCard = ({ post }: TPostCardProps) => {
@@ -13,13 +15,13 @@ const PostCard = ({ post }: TPostCardProps) => {
     >
       <Card>
         <CardHeader>
-          <span className='inline-flex justify-between items-center'>
+          <span className='inline-flex justify-between gap-2 items-center'>
             <CardTitle className='text-base line-clamp-1'>
               {post.title}
             </CardTitle>
-            <p className='text-xs'>{post.date}</p>
+            <p className='text-sm'>{formatDate(post.date)}</p>
           </span>
-          <CardDescription className='text-xs line-clamp-2'>
+          <CardDescription className='text-sm line-clamp-2'>
             {post.description}
           </CardDescription>
         </CardHeader>

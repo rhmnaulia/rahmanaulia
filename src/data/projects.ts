@@ -1,13 +1,13 @@
 const projects = [
   {
-    title: 'Lorem ipsum',
-    url: '/',
-    stacks: ['Next', 'Tailwind', 'Go'],
+    title: 'Personal websites',
+    url: 'https://github.com/rhmnaulia/rahmanaulia',
+    stacks: ['Next', 'Tailwind', 'Typescript', 'Shadcn-ui', 'Radix', 'MDX'],
   },
   {
-    title: 'Lorem ipsum',
-    url: '/',
-    stacks: ['Next', 'Tailwind', 'Go'],
+    title: 'Markdown editor ',
+    url: 'https://github.com/rhmnaulia/md-editor',
+    stacks: ['React', 'Tailwind', 'Vite'],
   },
 ]
 

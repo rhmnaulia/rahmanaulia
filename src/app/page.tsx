@@ -40,8 +40,8 @@ export default function Home() {
           <h3 className='text-lg dark:text-white'>Latest projects</h3>
           <Link
             className='underline decoration-dashed underline-offset-8'
-            href='/posts'
-            target='_self'
+            href='https://github.com/rhmnaulia'
+            target='_blank'
           >
             See all projects
           </Link>

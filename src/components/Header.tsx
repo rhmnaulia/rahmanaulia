@@ -11,8 +11,8 @@ export const NAV_MENU_LINK = [
     path: '/',
   },
   {
-    label: 'Blog',
-    path: '/blog',
+    label: 'Posts',
+    path: '/posts',
   },
   {
     label: 'About',

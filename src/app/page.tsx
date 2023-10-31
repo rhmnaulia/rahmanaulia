@@ -8,7 +8,7 @@ import { allPosts } from 'contentlayer/generated'
 
 export default function Home() {
   return (
-    <section className='w-full flex flex-col gap-20'>
+    <section className='w-full flex flex-col flex-wrap gap-20'>
       <article className='flex flex-col gap-6'>
         <h1 className='text-2xl dark:text-white font-bold tracking-tighter'>
           {presentation.title}

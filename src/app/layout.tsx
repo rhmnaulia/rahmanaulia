@@ -13,14 +13,14 @@ export const metadata: Metadata = {
     template: '%s | Aulia Rahman',
   },
   description: 'Software Engineer',
-  openGraph: {
-    title: 'Aulia Rahman',
-    description: 'Developer, writer, and creator.',
-    url: 'https://rahmanaulia.com',
-    siteName: 'Aulia Rahman',
-    locale: 'en_US',
-    type: 'website',
-  },
+  // openGraph: {
+  //   title: 'Aulia Rahman',
+  //   description: 'Software Engineer',
+  //   url: 'https://rahmanaulia.com',
+  //   siteName: 'Aulia Rahman',
+  //   locale: 'en_US',
+  //   type: 'website',
+  // },
   robots: {
     index: true,
     follow: true,

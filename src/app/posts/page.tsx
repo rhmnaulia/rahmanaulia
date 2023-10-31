@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function PostsPage() {
   return (
-    <div className='prose dark:prose-invert'>
+    <div className='prose dark:prose-invert flex-grow'>
       {allPosts.map((post) => (
         <article key={post._id}>
           <Link href={post.slug}>

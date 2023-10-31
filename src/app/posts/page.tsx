@@ -1,5 +1,11 @@
 import { allPosts } from 'contentlayer/generated'
+import { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'Posts',
+  description: 'I write about anything here.',
+}
 
 export default function PostsPage() {
   return (

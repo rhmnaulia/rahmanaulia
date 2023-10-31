@@ -5,12 +5,6 @@ import presentation from '@/data/presentation'
 import projects from '@/data/projects'
 import Link from 'next/link'
 import { allPosts } from 'contentlayer/generated'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Posts',
-  description: 'I write about anything here.',
-}
 
 export default function Home() {
   return (

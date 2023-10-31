@@ -21,7 +21,7 @@ export default function Home() {
         <header className='flex w-full flex-row items-center justify-between gap-2'>
           <h3 className='text-lg dark:text-white'>Latest posts</h3>
           <Link
-            className='underline decoration-dashed underline-offset-8'
+            className='underline decoration-dashed hover:decoration-sky-400 underline-offset-8'
             href='/posts'
             target='_self'
           >
@@ -39,7 +39,7 @@ export default function Home() {
         <header className='flex w-full flex-row items-center justify-between gap-2'>
           <h3 className='text-lg dark:text-white'>Latest projects</h3>
           <Link
-            className='underline decoration-dashed underline-offset-8'
+            className='underline decoration-dashed hover:decoration-sky-400 underline-offset-8'
             href='https://github.com/rhmnaulia'
             target='_blank'
           >

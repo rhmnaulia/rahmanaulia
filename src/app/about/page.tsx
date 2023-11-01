@@ -1,6 +1,8 @@
 const AboutPage = () => {
   return (
-    <div className=' flex-grow mt-12 text-3xl text-center'>Coming soon 😝</div>
+    <div className=' flex-grow mt-[33vh] text-3xl text-center'>
+      Coming soon 😝
+    </div>
   )
 }
 

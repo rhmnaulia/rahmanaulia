@@ -31,7 +31,7 @@ const Header = () => {
             href={menu.path}
             className={cn(
               pathname === menu.path
-                ? 'font-bold dark:text-white underline decoration-wavy underline-offset-8'
+                ? 'font-bold dark:text-white underline decoration-wavy dark:decoration-sky-300 decoration-sky-500 underline-offset-8'
                 : 'dark:text-neutral-300 hover:dark:text-white hover:text-gray-500'
             )}
           >

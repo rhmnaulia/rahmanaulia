@@ -30,9 +30,21 @@ export async function generateMetadata({
     return {}
   }
 
+  const { title, slugAsParams, description } = post
+
   return {
-    title: post.title,
-    description: post.description,
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      url: `https://rahmanaulia.com/posts/${slugAsParams}`,
+    },
+    twitter: {
+      title,
+      description,
+    },
   }
 }
 

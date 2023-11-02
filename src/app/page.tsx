@@ -10,18 +10,20 @@ export default function Home() {
   return (
     <section className='w-full flex flex-col gap-20 flex-grow'>
       <article className='flex flex-col gap-6'>
-        <h1 className='text-2xl dark:text-white font-bold tracking-tighter'>
+        <h1 className='text-2xl dark:text-foreground/100 font-bold tracking-tighter'>
           {presentation.title}
         </h1>
-        <p className='break-words'>{presentation.description}</p>
+        <p className='break-words dark:text-foreground/80'>
+          {presentation.description}
+        </p>
         <Socials />
       </article>
 
       <article className='flex flex-col gap-6'>
         <header className='flex w-full flex-row items-center justify-between gap-2'>
-          <h3 className='text-lg dark:text-white'>Latest posts</h3>
+          <h3 className='text-lg'>Latest posts</h3>
           <Link
-            className='underline decoration-dashed hover:decoration-sky-400 underline-offset-8'
+            className='text-foreground/80 hover:text-foreground/90 underline decoration-dashed text-sm hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
             href='/posts'
             target='_self'
           >
@@ -37,9 +39,9 @@ export default function Home() {
 
       <article className='flex flex-col gap-6'>
         <header className='flex w-full flex-row items-center justify-between gap-2'>
-          <h3 className='text-lg dark:text-white'>Latest projects</h3>
+          <h3 className='text-lg'>Latest projects</h3>
           <Link
-            className='underline decoration-dashed hover:decoration-sky-400 underline-offset-8'
+            className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-dashed hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
             href='https://github.com/rhmnaulia'
             target='_blank'
           >

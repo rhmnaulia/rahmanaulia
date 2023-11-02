@@ -21,18 +21,21 @@ export const NAV_MENU_LINK = [
 ]
 
 const Header = () => {
-  const pathname = usePathname()
+  let pathname = usePathname()
+  if (pathname.includes('/posts/')) {
+    pathname = '/posts'
+  }
   return (
     <header className='z-40 flex w-full gap-2 flex-row justify-between items-center'>
-      <nav className='flex items-center gap-4'>
+      <nav className='flex items-center gap-4 tracking-tighter'>
         {NAV_MENU_LINK.map((menu, index) => (
           <Link
             key={index}
             href={menu.path}
             className={cn(
               pathname === menu.path
-                ? 'font-bold dark:text-white underline decoration-wavy dark:decoration-sky-300 decoration-sky-500 underline-offset-8'
-                : 'dark:text-neutral-300 hover:dark:text-white hover:text-gray-500'
+                ? 'dark:text-foreground/90 font-medium text-foreground/100 underline decoration-wavy underline-offset-8'
+                : 'dark:text-foreground/60 text-foreground/80 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
             )}
           >
             {menu.label}

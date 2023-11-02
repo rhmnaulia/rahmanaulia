@@ -67,7 +67,7 @@ export default async function PostPage({ params }: PostProps) {
     <div>
       <Link
         href='/posts'
-        className='inline-flex items-center gap-2 text-muted-foreground hover:dark:text-sky-300 hover:text-sky-500'
+        className='inline-flex items-center gap-2 text-muted-foreground hover:text-foreground/80'
       >
         <ArrowLeft size={18} />
         <p>Back to list</p>

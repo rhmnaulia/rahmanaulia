@@ -26,13 +26,13 @@ const SOCIAL_LINKS = [
 
 const Socials = () => {
   return (
-    <div className='inline-flex gap-4 items-center dark:text-white'>
+    <div className='inline-flex gap-4 items-center'>
       {SOCIAL_LINKS.map((item, index) => (
         <Link
           href={item.url}
           target='_blank'
           key={index}
-          className='dark:hover:text-sky-400 hover:text-sky-600'
+          className='hover:text-muted-foreground transition-colors'
         >
           {item.icon}
         </Link>

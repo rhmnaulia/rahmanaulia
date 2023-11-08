@@ -1,17 +1,18 @@
-# rahmanaulia.com (On-Progress)
+# Welcome to rahmanaulia.com (Work in Progress)
 
-## Description
-Welcome to my simple yet incredibly useful (for me 😏) personal website. The main tech stack includes Next, TypeScript, Tailwind, Radix, and Shadcn-ui.
+## Overview
+My not-so-flashy personal website, currently in the works. Powered by Next, TypeScript, Tailwind, Radix, and Shadcn-ui.
 
-Dark           |  Light
-:-------------------------:|:-------------------------:
-![Aulia Rahman (4)](https://github.com/rhmnaulia/rahmanaulia/assets/42644135/598e3a31-3a6c-4028-b839-7fdc7f87d5cf)  | ![Aulia Rahman (3)](https://github.com/rhmnaulia/rahmanaulia/assets/42644135/ee0aafaf-1bd7-4eb4-9488-d9ea0ea421d2)
+![rahmanauliacom](https://github.com/rhmnaulia/rahmanaulia/assets/42644135/4845f66a-43bc-48b2-b8bc-1c1e8be9b0ff)
+
+
 ---
-## TODO
 
-- [x] Incorporate Blog Features (MDX, ContentLayer)
-- [ ] Add shiki for code highlighting
-- [ ] Enhance the About Page (Include Spotify Stats)
-- [x] Populate the Content with Real Data
-- [ ] Implement SEO Optimization
-- [ ] Create Notes/Snippet Page
+## Roadmap
+
+- [x] Integrate Blog Features (MDX, ContentLayer)
+- [ ] Implement shiki for code highlighting
+- [ ] Elevate the About Page (Include Spotify Stats)
+- [x] Populate Content with Real Data
+- [ ] SEO Optimization in the pipeline
+- [ ] Craft a Notes/Snippet Page to enhance the experience

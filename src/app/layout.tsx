@@ -51,7 +51,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className='mx-auto flex min-h-screen max-w-[736px] flex-col flex-wrap gap-9 px-6 py-6 md:gap-20'>
+          <main className='mx-auto flex min-h-screen max-w-[736px] flex-col flex-wrap gap-9 px-6 md:py-12 py-8 md:gap-20'>
             <Header />
             {children}
             <Footer />

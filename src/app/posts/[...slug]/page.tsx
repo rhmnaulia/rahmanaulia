@@ -6,13 +6,13 @@ import { Mdx } from '@/components/MDXComponents'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
 
-interface PostProps {
+type TPostProps = {
   params: {
     slug: string[]
   }
 }
 
-async function getPostFromParams(params: PostProps['params']) {
+async function getPostFromParams(params: TPostProps['params']) {
   const slug = params?.slug?.join('/')
   const post = allPosts.find((post) => post.slugAsParams === slug)
 
@@ -25,7 +25,7 @@ async function getPostFromParams(params: PostProps['params']) {
 
 export async function generateMetadata({
   params,
-}: PostProps): Promise<Metadata> {
+}: TPostProps): Promise<Metadata> {
   const post = await getPostFromParams(params)
 
   if (!post) {
@@ -50,13 +50,13 @@ export async function generateMetadata({
   }
 }
 
-export async function generateStaticParams(): Promise<PostProps['params'][]> {
+export async function generateStaticParams(): Promise<TPostProps['params'][]> {
   return allPosts.map((post) => ({
     slug: post.slugAsParams.split('/'),
   }))
 }
 
-export default async function PostPage({ params }: PostProps) {
+export default async function PostPage({ params }: TPostProps) {
   const post = await getPostFromParams(params)
 
   if (!post) {

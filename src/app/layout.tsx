@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { GeistSans, GeistMono } from 'geist/font'
+import { GeistSans } from 'geist/font'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'

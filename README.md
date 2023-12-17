@@ -11,7 +11,7 @@ My not-so-flashy personal website, currently in the works. Powered by Next, Type
 ## Roadmap
 
 - [x] Integrate Blog Features (MDX, ContentLayer)
-- [ ] Implement shiki for code highlighting
+- [X] Implement shiki for code highlighting
 - [ ] Elevate the About Page (Include Spotify Stats)
 - [x] Populate Content with Real Data
 - [ ] SEO Optimization in the pipeline

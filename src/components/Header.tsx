@@ -22,8 +22,8 @@ export const NAV_MENU_LINK = [
 
 const Header = () => {
   let pathname = usePathname()
-  if (pathname.includes('/posts/')) {
-    pathname = '/posts'
+  if (pathname.includes('/blog/')) {
+    pathname = '/blog'
   }
   return (
     <header className='z-40 flex w-full gap-2 flex-row justify-between items-center'>

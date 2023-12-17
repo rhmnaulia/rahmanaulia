@@ -10,7 +10,7 @@ type TPostCardProps = {
 const PostCard = ({ post }: TPostCardProps) => {
   return (
     <Link
-      href={post.slug}
+      href={`/blog/${post.slugAsParams}`}
       className='transition-all duration-300 hover:-translate-y-2 w-full'
     >
       <Card>

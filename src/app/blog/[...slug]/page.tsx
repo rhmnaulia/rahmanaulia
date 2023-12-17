@@ -66,7 +66,7 @@ export default async function PostPage({ params }: TPostProps) {
   return (
     <div>
       <Link
-        href='/posts'
+        href='/blog'
         className='inline-flex items-center gap-2 text-muted-foreground hover:text-foreground/80'
       >
         <ArrowLeft size={18} />

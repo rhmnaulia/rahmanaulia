@@ -11,8 +11,8 @@ export const NAV_MENU_LINK = [
     path: '/',
   },
   {
-    label: 'Posts',
-    path: '/posts',
+    label: 'Blog',
+    path: '/blog',
   },
   {
     label: 'About',
@@ -27,7 +27,7 @@ const Header = () => {
   }
   return (
     <header className='z-40 flex w-full gap-2 flex-row justify-between items-center'>
-      <nav className='flex items-center gap-4 tracking-tighter'>
+      <nav className='flex items-center gap-4'>
         {NAV_MENU_LINK.map((menu, index) => (
           <Link
             key={index}

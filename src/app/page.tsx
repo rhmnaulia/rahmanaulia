@@ -8,9 +8,9 @@ import { allPosts } from 'contentlayer/generated'
 
 export default function Home() {
   return (
-    <section className='w-full flex flex-col gap-20 flex-grow'>
-      <article className='flex flex-col gap-6'>
-        <h1 className='text-2xl dark:text-foreground/100 font-bold tracking-tighter'>
+    <section className='w-full flex flex-col gap-14 md:gap-20 flex-grow'>
+      <article className='flex flex-col gap-4'>
+        <h1 className='text-2xl dark:text-foreground/100 font-bold'>
           {presentation.title}
         </h1>
         <p className='break-words dark:text-foreground/80'>
@@ -24,7 +24,7 @@ export default function Home() {
           <h3 className='text-lg'>Latest posts</h3>
           <Link
             className='text-foreground/80 hover:text-foreground/90 underline decoration-dashed text-sm hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
-            href='/posts'
+            href='/blog'
             target='_self'
           >
             See all posts

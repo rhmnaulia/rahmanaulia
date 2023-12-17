@@ -26,7 +26,7 @@ const SOCIAL_LINKS = [
 
 const Socials = () => {
   return (
-    <div className='inline-flex gap-4 items-center'>
+    <div className='inline-flex gap-4 mt-1 items-center'>
       {SOCIAL_LINKS.map((item, index) => (
         <Link
           href={item.url}

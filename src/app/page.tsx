@@ -16,7 +16,9 @@ export default function Home() {
         <p className='break-words dark:text-foreground/80'>
           {presentation.description}
         </p>
-        <Socials />
+        <span className='mt-1'>
+          <Socials />
+        </span>
       </article>
 
       <article className='flex flex-col gap-6'>

@@ -16,7 +16,7 @@ CSP is like a set of rules for browsers to follow and protect our websites. It h
 
 First things first, set the CSP header in your web server's response. This tells the browser what's allowed. For starters:
 
-```html
+```ts
 Content-Security-Policy: default-src 'self';
 ```
 
@@ -26,7 +26,7 @@ This says only stuff from our own site is allowed by default.
 
 Customize your CSP by choosing where different types of content can come from. For example:
 
-```html
+```ts
 Content-Security-Policy: default-src 'self'; script-src 'self'
 https://trusted-scripts.com;
 ```
@@ -37,7 +37,7 @@ This lets scripts come from our site and trusted-scripts.com.
 
 Use unique codes like nonces and hashes to control inline scripts and styles. Make it unique each time for added security:
 
-```html
+```ts
 Content-Security-Policy: script-src 'nonce-RANDOM-NONCE'
 'sha256-HASH-OF-TRUSTED-SCRIPT';
 ```
@@ -46,7 +46,7 @@ Content-Security-Policy: script-src 'nonce-RANDOM-NONCE'
 
 Want to know if someone's trying to mess with your policy? Turn on reporting:
 
-```html
+```ts
 Content-Security-Policy: default-src 'self'; report-uri
 /report-violations-endpoint;
 ```

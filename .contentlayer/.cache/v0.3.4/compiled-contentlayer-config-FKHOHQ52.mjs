@@ -98,7 +98,7 @@ var contentlayer_config_default = makeSource({
       [
         rehypePrettyCode,
         {
-          theme: "github-dark",
+          theme: "poimandres",
           onVisitLine(node) {
             if (node.children.length === 0) {
               node.children = [{ type: "text", value: " " }];
@@ -130,4 +130,4 @@ export {
   Post,
   contentlayer_config_default as default
 };
-//# sourceMappingURL=compiled-contentlayer-config-HWZCQJMI.mjs.map
+//# sourceMappingURL=compiled-contentlayer-config-FKHOHQ52.mjs.map

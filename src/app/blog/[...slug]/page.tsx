@@ -67,15 +67,15 @@ export default async function PostPage({ params }: TPostProps) {
     <div className='w-full'>
       <Link
         href='/blog'
-        className='inline-flex items-center gap-2 text-muted-foreground hover:text-foreground/80'
+        className='inline-flex items-center  gap-2 text-muted-foreground hover:text-foreground/80'
       >
         <ArrowLeft size={18} />
         <p>Back to list</p>
       </Link>
-      <article className='py-6 prose dark:prose-invert'>
-        <h1 className='mb-2 text-center'>{post.title}</h1>
+      <article className='py-6 prose dark:prose-invert '>
+        <h1 className='mb-2 text-center text-balance'>{post.title}</h1>
         {post.description && (
-          <p className='text-xl text-center mt-0 text-slate-700 dark:text-slate-200'>
+          <p className='text-xl text-center mt-0 text-slate-700 text-balance dark:text-slate-200'>
             {post.description}
           </p>
         )}

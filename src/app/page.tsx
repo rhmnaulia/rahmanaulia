@@ -10,10 +10,10 @@ export default function Home() {
   return (
     <section className='w-full flex flex-col gap-14 md:gap-20 flex-grow'>
       <article className='flex flex-col gap-4'>
-        <h1 className='text-2xl dark:text-foreground/100 font-bold'>
+        <h1 className='text-2xl dark:text-foreground/100 font-bold text-pretty'>
           {presentation.title}
         </h1>
-        <p className='break-words dark:text-foreground/80'>
+        <p className='break-words dark:text-foreground/80 text-pretty'>
           {presentation.description}
         </p>
         <span className='mt-1'>

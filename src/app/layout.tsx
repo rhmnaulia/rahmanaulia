@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import { GeistSans } from 'geist/font'
+import { GeistSans, GeistMono } from 'geist/font'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 import './globals.css'
+import { cx } from 'class-variance-authority'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://rahmanaulia.com'),
@@ -43,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={GeistSans.className} lang='en'>
+    <html className={cx(GeistSans.variable, GeistMono.variable)} lang='en'>
       <body>
         <ThemeProvider attribute='class' enableSystem disableTransitionOnChange>
           <main className='mx-auto flex min-h-screen max-w-[736px] flex-col flex-wrap gap-10 px-6 md:py-12 py-8 md:gap-16'>

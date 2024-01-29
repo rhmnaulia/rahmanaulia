@@ -5,7 +5,7 @@ import { Metadata } from 'next'
 import { Mdx } from '@/components/MDXComponents'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
-import { MotionDiv, MotionArticle } from '@/components/MotionClient'
+import { MotionDiv } from '@/components/MotionClient'
 
 type TPostProps = {
   params: {
@@ -83,9 +83,8 @@ export default async function PostPage({ params }: TPostProps) {
         <ArrowLeft size={18} />
         <p>Back to list</p>
       </Link>
-      <MotionArticle
+      <article
         className='py-6 prose dark:prose-invert'
-        variants={pageVariants}
       >
         <h1 className='mb-2 text-center text-balance'>{post.title}</h1>
         {post.description && (
@@ -95,7 +94,7 @@ export default async function PostPage({ params }: TPostProps) {
         )}
         <hr className='my-4' />
         <Mdx code={post.body.code} />
-      </MotionArticle>
+      </article>
     </MotionDiv>
   )
 }

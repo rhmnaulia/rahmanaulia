@@ -16,6 +16,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
+    "framer-motion": "^11.0.3",
     "geist": "^1.2.0",
     "lucide-react": "^0.302.0",
     "million": "^2.6.4",

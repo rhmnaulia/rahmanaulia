@@ -5,12 +5,42 @@ import presentation from '@/data/presentation'
 import projects from '@/data/projects'
 import Link from 'next/link'
 import { allPosts } from 'contentlayer/generated'
+import { MotionArticle, MotionDiv, MotionSection } from '@/components/MotionClient'
+
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, x: -100 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
 
 export default function Home() {
   return (
-    <section className='w-full flex flex-col gap-14 md:gap-20 flex-grow'>
-      <article className='flex flex-col gap-4'>
-        <h1 className='text-2xl dark:text-foreground/100 font-bold text-pretty'>
+    <MotionSection
+      className='w-full flex flex-col gap-14 md:gap-20 flex-grow'
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <MotionArticle
+        className='flex flex-col gap-4'
+        variants={sectionVariants}
+      >
+         <h1 className='text-2xl dark:text-foreground/100 font-bold text-pretty'>
           {presentation.title}
         </h1>
         <p className='break-words dark:text-foreground/80 text-pretty'>
@@ -19,9 +49,12 @@ export default function Home() {
         <span className='mt-1'>
           <Socials />
         </span>
-      </article>
+      </MotionArticle>
 
-      <article className='flex flex-col gap-6'>
+      <MotionArticle
+        className='flex flex-col gap-6'
+        variants={sectionVariants}
+      >
         <header className='flex w-full flex-row items-center justify-between gap-2'>
           <h3 className='text-lg'>Latest posts</h3>
           <Link
@@ -32,15 +65,23 @@ export default function Home() {
             See all posts
           </Link>
         </header>
-        <div className='flex flex-col md:flex-row gap-4 justify-between'>
+        <MotionDiv
+          className='flex flex-col md:flex-row gap-4 justify-between'
+          variants={containerVariants}
+        >
           {allPosts.slice(0, 2).map((post, index) => (
-            <PostCard post={post} key={index} />
+            <MotionDiv key={index} variants={cardVariants}>
+              <PostCard post={post} />
+            </MotionDiv>
           ))}
-        </div>
-      </article>
+        </MotionDiv>
+      </MotionArticle>
 
-      <article className='flex flex-col gap-6'>
-        <header className='flex w-full flex-row items-center justify-between gap-2'>
+      <MotionArticle
+        className='flex flex-col gap-6'
+        variants={sectionVariants}
+      >
+         <header className='flex w-full flex-row items-center justify-between gap-2'>
           <h3 className='text-lg'>Latest projects</h3>
           <Link
             className='text-foreground/80 hover:text-foreground/90 underline text-sm decoration-dashed hover:decoration-foreground/80 decoration-foreground/60 underline-offset-8'
@@ -50,12 +91,17 @@ export default function Home() {
             See all projects
           </Link>
         </header>
-        <div className='flex flex-col w-full gap-4'>
+        <MotionDiv
+          className='flex flex-col w-full gap-4'
+          variants={containerVariants}
+        >
           {projects.map((project, idx) => (
-            <ProjectCard project={project} key={idx} />
+            <MotionDiv key={idx} variants={cardVariants}>
+              <ProjectCard project={project} />
+            </MotionDiv>
           ))}
-        </div>
-      </article>
-    </section>
+        </MotionDiv>
+      </MotionArticle>
+    </MotionSection>
   )
 }

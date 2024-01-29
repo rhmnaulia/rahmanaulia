@@ -5,6 +5,7 @@ import { Metadata } from 'next'
 import { Mdx } from '@/components/MDXComponents'
 import { ArrowLeft } from 'lucide-react'
 import Link from 'next/link'
+import { MotionDiv, MotionArticle } from '@/components/MotionClient'
 
 type TPostProps = {
   params: {
@@ -56,6 +57,11 @@ export async function generateStaticParams(): Promise<TPostProps['params'][]> {
   }))
 }
 
+const pageVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: { opacity: 1, x: 5 },
+};
+
 export default async function PostPage({ params }: TPostProps) {
   const post = await getPostFromParams(params)
 
@@ -64,15 +70,23 @@ export default async function PostPage({ params }: TPostProps) {
   }
 
   return (
-    <div className='w-full'>
+    <MotionDiv
+      className='w-full'
+      initial='hidden'
+      animate='visible'
+      variants={pageVariants}
+    >
       <Link
         href='/blog'
-        className='inline-flex items-center  gap-2 text-muted-foreground hover:text-foreground/80'
+        className='inline-flex items-center gap-2 text-muted-foreground hover:text-foreground/80'
       >
         <ArrowLeft size={18} />
         <p>Back to list</p>
       </Link>
-      <article className='py-6 prose dark:prose-invert '>
+      <MotionArticle
+        className='py-6 prose dark:prose-invert'
+        variants={pageVariants}
+      >
         <h1 className='mb-2 text-center text-balance'>{post.title}</h1>
         {post.description && (
           <p className='text-xl text-center mt-0 text-slate-700 text-balance dark:text-slate-200'>
@@ -81,7 +95,7 @@ export default async function PostPage({ params }: TPostProps) {
         )}
         <hr className='my-4' />
         <Mdx code={post.body.code} />
-      </article>
-    </div>
+      </MotionArticle>
+    </MotionDiv>
   )
 }

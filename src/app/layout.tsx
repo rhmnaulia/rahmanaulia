@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Satisfy } from 'next/font/google'
 import { GeistMono } from 'geist/font/mono'
 import { GeistSans } from 'geist/font/sans'
 
@@ -16,9 +16,11 @@ export const metadata: Metadata = {
 }
 
 // If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+const satisfy = Satisfy({
+  variable: '--font-satisfy',
   subsets: ['latin'],
   display: 'swap',
+  weight: '400',
 })
 
 export default function RootLayout({
@@ -27,15 +29,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={cx(GeistSans.variable, GeistMono.variable)}>
-      <body className='antialiased dark:text-foreground/90'>
+    <html
+      lang='en'
+      className={cx(GeistSans.variable, GeistMono.variable, satisfy.variable)}
+    >
+      <body className='antialiased dark:text-foreground/90 noise-filter'>
         <ThemeProvider
           attribute='class'
           defaultTheme='system'
           enableSystem
           disableTransitionOnChange
         >
-          <main className='mx-auto flex min-h-screen max-w-[736px] flex-col flex-wrap gap-10 px-6 md:py-12 py-8 md:gap-16'>
+          <main className='mx-auto flex min-h-screen max-w-2xl flex-col flex-wrap gap-10 px-6 md:py-12 py-8 md:gap-16'>
             <Navbar />
             {children}
           </main>

@@ -11,8 +11,8 @@ export const NAV_MENU_LINK = [
     path: '/',
   },
   {
-    label: 'Blog',
-    path: '/blog',
+    label: 'Writings',
+    path: '/writings',
   },
   {
     label: 'About',
@@ -24,13 +24,14 @@ export function Navbar() {
   let pathname = usePathname()
 
   // Simplify pathname adjustment
-  pathname = pathname.startsWith('/blog/') ? '/blog' : pathname
+  pathname = pathname.startsWith('/writings/') ? '/writings' : pathname
 
   function getLinkClassName(isActive: boolean) {
     return cn(
+      'text-base tracking-tight',
       isActive
-        ? 'dark:text-foreground font-medium'
-        : 'dark:text-foreground/60 text-foreground/80 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
+        ? 'font-medium'
+        : 'dark:text-foreground/60 text-foreground/60 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
     )
   }
 

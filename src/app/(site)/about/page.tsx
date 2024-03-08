@@ -6,7 +6,7 @@ import { cx } from 'class-variance-authority'
 
 const AboutPage = () => {
   return (
-    <section className='flex flex-col gap-12 w-full'>
+    <section className='flex flex-col gap-10 w-full'>
       <BioCard />
       <article>
         <h2 className='text-xl font-bold mb-3'>About</h2>
@@ -71,12 +71,7 @@ const AboutPage = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent
-                  className={cx(
-                    'text-xs px-0',
-                    index === WORK_EXPERIENCE.length - 1 ? 'pb-0' : ''
-                  )}
-                >
+                <CardContent className='text-xs px-0 pb-0'>
                   {education.description}
                 </CardContent>
               </Card>

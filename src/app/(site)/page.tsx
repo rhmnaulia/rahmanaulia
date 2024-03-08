@@ -18,7 +18,7 @@ export default function Page() {
             className='shadow-md dark:bg-neutral-900 bg-neutral-100'
             variant={'outline'}
           >
-            Writings
+            Writing
           </Button>
           <Button
             className='shadow-md dark:bg-neutral-900 bg-neutral-100'

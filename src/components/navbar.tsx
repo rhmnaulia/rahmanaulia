@@ -11,8 +11,8 @@ export const NAV_MENU_LINK = [
     path: '/',
   },
   {
-    label: 'Writings',
-    path: '/writings',
+    label: 'Writing',
+    path: '/writing',
   },
   {
     label: 'About',
@@ -24,7 +24,7 @@ export function Navbar() {
   let pathname = usePathname()
 
   // Simplify pathname adjustment
-  pathname = pathname.startsWith('/writings/') ? '/writings' : pathname
+  pathname = pathname.startsWith('/writing/') ? '/writing' : pathname
 
   function getLinkClassName(isActive: boolean) {
     return cn(

@@ -34,6 +34,10 @@ export default config({
       format: { contentField: 'content' },
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
+        summary: fields.text({
+          label: 'Summary',
+          validation: { isRequired: true },
+        }),
         date: fields.date({
           label: 'Publication Date',
           description:

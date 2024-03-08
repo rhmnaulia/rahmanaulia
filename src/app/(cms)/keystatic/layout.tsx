@@ -5,7 +5,6 @@ export default function Layout() {
     <html>
       <head />
       <body>
-        {/* @ts-expect-error Server Component */}
         <KeystaticApp />
       </body>
     </html>

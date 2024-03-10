@@ -71,19 +71,15 @@ export default config({
         ),
         content: fields.document({
           label: 'Content',
+          description: 'The content of the article',
           formatting: true,
           dividers: true,
           links: true,
           images: {
-            directory: 'public/site/images',
-            publicPath: '/site/images',
-            schema: {
-              title: fields.text({
-                label: 'Image Caption',
-                description: 'Enter the caption for the image.',
-              }),
-            },
+            directory: 'public/assets',
+            publicPath: '/assets',
           },
+          layouts: [[1], [1, 1], [1, 2], [2, 1]],
         }),
       },
     }),

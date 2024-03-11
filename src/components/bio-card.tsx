@@ -12,7 +12,7 @@ const socials = [
 
 const BioCard = () => {
   return (
-    <div className='flex items-center w-fit mx-auto gap-8 p-8 rounded-2xl border shadow-md'>
+    <div className='flex items-center md:w-fit w-full mx-auto gap-6 md:p-8 p-5 rounded-xl flex-nowrap border shadow-md'>
       <div className='flex flex-col gap-3'>
         <p className='max-w-md items-center text-pretty text-xs text-muted-foreground'>
           <a
@@ -25,7 +25,7 @@ const BioCard = () => {
           </a>
         </p>
         <span className='flex items-baseline gap-2'>
-          <h1 className='md:text-2xl text-xl font-bold font-display text-pretty'>
+          <h1 className='md:text-xl text-base font-bold font-display text-pretty'>
             Aulia Rahman
           </h1>
           <p className='text-xs text-foreground/65'>he/him</p>
@@ -46,7 +46,7 @@ const BioCard = () => {
           ))}
         </div>
       </div>
-      <Avatar className='md:size-28 size-20 rounded-2xl'>
+      <Avatar className='md:size-28 size-24 rounded-xl border-foreground/50 border'>
         <AvatarImage src='https://github.com/rhmnaulia.png' />
         <AvatarFallback className='size-28 rounded-2xl'>AR</AvatarFallback>
       </Avatar>

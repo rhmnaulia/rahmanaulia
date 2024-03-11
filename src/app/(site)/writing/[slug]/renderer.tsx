@@ -10,8 +10,8 @@ export function getArticleRenderers(): DocumentRendererProps['renderers'] {
         return (
           <ScrollArea
             className={cn(
-              'not-prose relative rounded-lg text-sm',
-              'border border-foreground/50'
+              'not-prose relative rounded-lg md:text-sm text-xs',
+              'border border-teal-400'
             )}
           >
             <Shiki code={code} language={language} className='[&>pre]:p-4' />

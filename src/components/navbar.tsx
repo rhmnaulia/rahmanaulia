@@ -28,16 +28,19 @@ export function Navbar() {
 
   function getLinkClassName(isActive: boolean) {
     return cn(
-      'text-base tracking-tight',
+      'md:text-base text-sm',
       isActive
-        ? 'font-medium'
+        ? 'font-bold bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'
         : 'dark:text-foreground/60 text-foreground/60 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
     )
   }
 
   return (
     <header className='z-40 flex w-full gap-2 flex-row justify-between items-center'>
-      <nav aria-label='Main navigation' className='flex items-center gap-4'>
+      <nav
+        aria-label='Main navigation'
+        className='flex items-center gap-3 md:gap-4'
+      >
         {NAV_MENU_LINK.map((menu) => (
           <Link
             key={menu.path} // Use menu.path as a key for better uniqueness

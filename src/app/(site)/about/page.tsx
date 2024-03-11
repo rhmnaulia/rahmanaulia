@@ -9,7 +9,9 @@ const AboutPage = () => {
     <section className='flex flex-col gap-10 w-full'>
       <BioCard />
       <article>
-        <h2 className='text-xl font-bold mb-3'>About</h2>
+        <h2 className='text-2xl w-fit font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'>
+          About
+        </h2>
         <p className='text-pretty text-sm'>
           As a Full Stack Engineer, I have successfully taken multiple products
           from 0 to 1. I lead teams effectively, ensuring an environment where
@@ -19,13 +21,15 @@ const AboutPage = () => {
         </p>
       </article>
       <article>
-        <h2 className='text-xl font-bold mb-3'>Work Experience</h2>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+          Work Experience
+        </h2>
         <div className='last-of-type:pb-0'>
           {WORK_EXPERIENCE.map((work, index) => {
             return (
               <Card key={work.company} className='border-none shadow-none mt-1'>
                 <CardHeader className='px-0 pb-2 pt-0'>
-                  <div className='flex items-center justify-between gap-x-1 text-base'>
+                  <div className='flex items-center justify-between gap-x-1 text-'>
                     <h3 className='inline-flex items-center justify-center gap-x-1 font-semibold leading-none'>
                       <a className='hover:underline' href={work.link}>
                         {work.company}
@@ -35,7 +39,9 @@ const AboutPage = () => {
                       {work.start} - {work.end}
                     </div>
                   </div>
-                  <h4 className='text-sm leading-none'>{work.title}</h4>
+                  <h4 className='text-sm leading-none dark:text-teal-100 text-cyan-700'>
+                    {work.title}
+                  </h4>
                 </CardHeader>
                 <CardContent
                   className={cx(
@@ -51,7 +57,9 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-xl font-bold mb-3'>Education</h2>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+          Education
+        </h2>
         <div className='last-of-type:pb-0'>
           {EDUCATIONS.map((education, index) => {
             return (
@@ -80,11 +88,17 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-xl font-bold mb-3'>Skills</h2>
-        <div className='flex flex-wrap gap-1'>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+          Skills
+        </h2>
+        <div className='flex flex-wrap gap-2'>
           {SKILLS.map((skill) => {
             return (
-              <Badge key={skill} className='rounded-lg'>
+              <Badge
+                key={skill}
+                className='rounded-sm shadow-sm'
+                variant={'outline'}
+              >
                 {skill}
               </Badge>
             )

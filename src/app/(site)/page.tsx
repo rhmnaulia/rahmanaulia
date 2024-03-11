@@ -5,13 +5,17 @@ export default function Page() {
     <div className='flex flex-col gap-8'>
       <section className='flex flex-col gap-2'>
         <span className='flex items-baseline gap-2'>
-          <h1 className='text-3xl font-bold font-display'>Aulia Rahman</h1>
+          <h1 className='text-2xl font-bold font-display bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'>
+            Aulia Rahman
+          </h1>
           <p className='text-xs text-foreground/65'>he/him</p>
         </span>
-        <p className='text-base text-pretty'>
-          <em>Crafting interfaces</em>. Building sophisticated software and web
-          experiences. Pushing boundaries! Ensure functionality, quality, and
-          speed.
+        <p className='text-sm text-pretty'>
+          <em className='text-pretty'>
+            Dreaming of hoops but excelling in loops
+          </em>
+          . Traded the jersey for a keyboard, yet I’m still scoring with tech
+          flair and code that cares.
         </p>
         <div className='flex gap-2 mt-2'>
           <Button

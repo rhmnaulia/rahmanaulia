@@ -1,17 +1,25 @@
 import Link from 'next/link'
-import { Badge } from '@/components/ui/badge'
 import { createReader } from '@keystatic/core/reader'
 import keystaticConfig from '../../../../keystatic.config'
 
 const reader = createReader(process.cwd(), keystaticConfig)
 
 const WritingPage = async () => {
-  const posts = await reader.collections.posts.all()
+  const writings = await reader.collections.writings.all()
+
+  const filtered = writings.sort(
+    (a, b) =>
+      new Date(b.entry.publishedAt).getTime() -
+      new Date(a.entry.publishedAt).getTime()
+  )
+
   return (
-    <div className='flex flex-col gap-8'>
-      <div>
+    <article className='flex flex-col gap-8'>
+      <section>
         <div className='flex gap-1 items-baseline'>
-          <h1 className='font-bold md:text-2xl text-xl'>The Diverse Canvas</h1>
+          <h1 className='font-bold md:text-2xl text-xl bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'>
+            The Diverse Canvas
+          </h1>
           <p className='italic text-xs text-foreground/60'>
             tech, tales, and triumphs.
           </p>
@@ -22,41 +30,42 @@ const WritingPage = async () => {
           Basically, I write about whatever catches my interest here, so I hope
           you enjoy the reads.
         </p>
-      </div>
+      </section>
 
-      <div className='flex-grow border-t border-foreground/10'></div>
+      <hr
+        className='flex-grow border-t border-foreground/10'
+        aria-hidden='true'
+      />
 
-      <div className='w-full'>
+      <section className='w-full'>
+        <h2 className='sr-only'>Writings List</h2>
         <ul>
-          {posts.map((post, index) => (
-            <li key={post.slug} className='flex items-baseline gap-1 tex'>
+          {filtered.map((writing, index) => (
+            <li key={writing.slug} className='flex items-baseline gap-1'>
               <span className='mr-2 font-mono text-base text-foreground/80'>{`${(
-                posts.length -
+                writings.length -
                 index -
                 1
               )
                 .toString()
                 .padStart(2, '0')}.`}</span>
-              <Link href={`/writing/${post.slug}`} className='mb-6'>
-                <h2 className='font-semibold text-base text-pretty '>
-                  {post.entry.title}
-                </h2>
+              <Link
+                href={`/writing/${writing.slug}`}
+                aria-label={`Read more about ${writing.entry.title}`}
+                className='mb-6 block'
+              >
+                <h3 className='font-semibold text-base text-pretty'>
+                  {writing.entry.title}
+                </h3>
                 <p className='text-foreground/60 text-sm text-pretty'>
-                  {post.entry.summary}
+                  {writing.entry.description}
                 </p>
-                <div className='flex flex-wrap gap-1 mt-2'>
-                  {post.entry.tags.map((tag) => (
-                    <Badge key={tag} variant='secondary' className='rounded-md'>
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-    </div>
+      </section>
+    </article>
   )
 }
 

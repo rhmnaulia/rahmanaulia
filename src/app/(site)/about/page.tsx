@@ -9,19 +9,19 @@ const AboutPage = () => {
     <section className='flex flex-col gap-10 w-full'>
       <BioCard />
       <article>
-        <h2 className='text-2xl w-fit font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'>
+        <h2 className='text-2xl w-fit font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'>
           About
         </h2>
         <p className='text-pretty text-sm'>
-          As a Full Stack Engineer, I have successfully taken multiple products
-          from 0 to 1. I lead teams effectively, ensuring an environment where
-          people can do their best work. Currently, I work mostly with
-          TypeScript, React, Node.js, and GraphQL. I have over 8 years of
-          experience in working remotely with companies all around the world.
+          As a full-stack engineer currently occupying a mid-level frontend
+          engineer role in Indonesia&#39;s govtech procurement, I am passionate
+          about building solid software that is clean, well-tested, and
+          maintainable. I am committed to endless exploration—
+          <em>stay hungry, stay foolish</em>.
         </p>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
           Work Experience
         </h2>
         <div className='last-of-type:pb-0'>
@@ -39,9 +39,7 @@ const AboutPage = () => {
                       {work.start} - {work.end}
                     </div>
                   </div>
-                  <h4 className='text-sm leading-none dark:text-teal-100 text-cyan-700'>
-                    {work.title}
-                  </h4>
+                  <h4 className='text-sm leading-none '>{work.title}</h4>
                 </CardHeader>
                 <CardContent
                   className={cx(
@@ -57,7 +55,7 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
           Education
         </h2>
         <div className='last-of-type:pb-0'>
@@ -88,7 +86,7 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
           Skills
         </h2>
         <div className='flex flex-wrap gap-2'>

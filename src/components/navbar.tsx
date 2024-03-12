@@ -30,8 +30,8 @@ export function Navbar() {
     return cn(
       'md:text-base text-sm',
       isActive
-        ? 'font-bold bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'
-        : 'dark:text-foreground/60 text-foreground/60 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
+        ? 'font-bold bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'
+        : 'dark:text-foreground/60 text-foreground/80 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
     )
   }
 

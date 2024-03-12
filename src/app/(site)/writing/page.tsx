@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createReader } from '@keystatic/core/reader'
 import keystaticConfig from '../../../../keystatic.config'
+import { Separator } from '@/components/ui/separator'
 
 const reader = createReader(process.cwd(), keystaticConfig)
 
@@ -17,7 +18,7 @@ const WritingPage = async () => {
     <article className='flex flex-col gap-8'>
       <section>
         <div className='flex gap-1 items-baseline'>
-          <h1 className='font-bold md:text-2xl text-xl bg-gradient-to-r from-teal-500 to-sky-600 bg-clip-text text-transparent'>
+          <h1 className='font-bold md:text-2xl text-xl bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'>
             The Diverse Canvas
           </h1>
           <p className='italic text-xs text-foreground/60'>
@@ -32,7 +33,7 @@ const WritingPage = async () => {
         </p>
       </section>
 
-      <hr
+      <Separator
         className='flex-grow border-t border-foreground/10'
         aria-hidden='true'
       />

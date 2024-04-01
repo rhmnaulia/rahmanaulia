@@ -36,7 +36,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
         </figure>
       )}
       <header>
-        <h1 className='bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent md:text-3xl text-2xl font-bold text-pretty mb-2'>
+        <h1 className='md:text-3xl text-2xl font-serif font font-medium text-pretty mb-2'>
           {writings.title}
         </h1>
         <p className='text-foreground/60 md:text-sm text-xs'>

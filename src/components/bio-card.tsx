@@ -12,7 +12,11 @@ const socials = [
 
 const BioCard = () => {
   return (
-    <div className='flex items-center md:w-fit w-full mx-auto gap-6 md:p-8 p-5 rounded-xl flex-nowrap border shadow-md'>
+    <div className='flex items-center md:w-fit w-full mx-auto gap-6 rounded-sm flex-nowrap '>
+      <Avatar className='size-28 rounded-sm border-foreground/50 border'>
+        <AvatarImage src='https://github.com/rhmnaulia.png' />
+        <AvatarFallback className='size-28 rounded-2xl'>AR</AvatarFallback>
+      </Avatar>
       <div className='flex flex-col gap-3'>
         <p className='max-w-md items-center text-pretty text-xs text-muted-foreground'>
           <a
@@ -25,7 +29,7 @@ const BioCard = () => {
           </a>
         </p>
         <span className='flex items-baseline gap-2'>
-          <h1 className='md:text-xl text-base font-bold font-display text-pretty'>
+          <h1 className='md:text-2xl text-2xl font-medium font-serif text-pretty'>
             Aulia Rahman
           </h1>
           <p className='text-xs text-foreground/65'>he/him</p>
@@ -34,7 +38,7 @@ const BioCard = () => {
           {socials.map((social) => (
             <Button
               key={social.name}
-              className='size-8'
+              className='size-9 rounded-sm'
               variant='outline'
               size='icon'
               asChild
@@ -46,10 +50,6 @@ const BioCard = () => {
           ))}
         </div>
       </div>
-      <Avatar className='md:size-28 size-24 rounded-xl border-foreground/50 border'>
-        <AvatarImage src='https://github.com/rhmnaulia.png' />
-        <AvatarFallback className='size-28 rounded-2xl'>AR</AvatarFallback>
-      </Avatar>
     </div>
   )
 }

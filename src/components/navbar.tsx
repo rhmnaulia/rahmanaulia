@@ -28,9 +28,9 @@ export function Navbar() {
 
   function getLinkClassName(isActive: boolean) {
     return cn(
-      'md:text-base text-sm',
+      ' font-serif',
       isActive
-        ? 'font-bold bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'
+        ? 'font-medium underline underline-offset-4 decoration-1 decoration-neutral-700 hover:decoration-neutral-500 transition-colors dark:text-foreground/80 text-foreground/90 hover:text-foreground/100 hover:dark:text-foreground/90'
         : 'dark:text-foreground/60 text-foreground/80 transition-colors hover:text-foreground/100 hover:dark:text-foreground/90'
     )
   }

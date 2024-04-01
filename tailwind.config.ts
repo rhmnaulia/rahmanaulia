@@ -21,7 +21,8 @@ const config = {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
-        display: ['var(--font-rock_salt)'],
+        display: ['var(--font-rocksalt)'],
+        serif: ['var(--font-newsreader)'],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -77,6 +78,66 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      typography: (theme: (arg0: string) => any) => ({
+        dante: {
+          css: {
+            '--tw-prose-body': theme('textColor.main / 100%'),
+            '--tw-prose-headings': theme('textColor.main / 100%'),
+            '--tw-prose-lead': theme('textColor.main / 100%'),
+            '--tw-prose-links': theme('textColor.main / 100%'),
+            '--tw-prose-bold': theme('textColor.main / 100%'),
+            '--tw-prose-counters': theme('textColor.main / 100%'),
+            '--tw-prose-bullets': theme('textColor.main / 100%'),
+            '--tw-prose-hr': theme('borderColor.main / 100%'),
+            '--tw-prose-quotes': theme('textColor.main / 100%'),
+            '--tw-prose-quote-borders': theme('borderColor.main / 100%'),
+            '--tw-prose-captions': theme('textColor.main / 100%'),
+            '--tw-prose-code': theme('textColor.main / 100%'),
+            '--tw-prose-pre-code': theme('colors.zinc.100'),
+            '--tw-prose-pre-bg': theme('colors.zinc.800'),
+            '--tw-prose-th-borders': theme('borderColor.main / 100%'),
+            '--tw-prose-td-borders': theme('borderColor.main / 100%'),
+          },
+        },
+        DEFAULT: {
+          css: {
+            a: {
+              fontWeight: 'normal',
+              textDecoration: 'underline',
+              textDecorationStyle: 'dashed',
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '2px',
+              '&:hover': {
+                textDecorationStyle: 'solid',
+              },
+            },
+            'h1,h2,h3,h4,h5,h6': {
+              fontFamily: theme('fontFamily.serif'),
+              fontWeight: 500,
+            },
+            blockquote: {
+              border: 0,
+              fontFamily: theme('fontFamily.serif'),
+              fontSize: '1.3125em',
+              fontStyle: 'italic',
+              fontWeight: 'normal',
+              lineHeight: 1.4,
+              paddingLeft: 0,
+              '@media (min-width: theme("screens.sm"))': {
+                fontSize: '1.66667em',
+                lineHeight: 1.3,
+              },
+            },
+          },
+        },
+        lg: {
+          css: {
+            blockquote: {
+              paddingLeft: 0,
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],

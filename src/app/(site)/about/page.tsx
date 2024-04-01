@@ -6,10 +6,10 @@ import { cx } from 'class-variance-authority'
 
 const AboutPage = () => {
   return (
-    <section className='flex flex-col gap-10 w-full'>
+    <section className='flex flex-col gap-16 w-full'>
       <BioCard />
       <article>
-        <h2 className='text-2xl w-fit font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent'>
+        <h2 className='text-2xl w-fit font-medium italic tracking-tight mb-6 font-serif'>
           About
         </h2>
         <p className='text-pretty text-sm'>
@@ -21,7 +21,7 @@ const AboutPage = () => {
         </p>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-medium italic tracking-tight mb-6 font-serif w-fit'>
           Work Experience
         </h2>
         <div className='last-of-type:pb-0'>
@@ -29,8 +29,8 @@ const AboutPage = () => {
             return (
               <Card key={work.company} className='border-none shadow-none mt-1'>
                 <CardHeader className='px-0 pb-2 pt-0'>
-                  <div className='flex items-center justify-between gap-x-1 text-'>
-                    <h3 className='inline-flex items-center justify-center gap-x-1 font-semibold leading-none'>
+                  <div className='flex items-center justify-between gap-x-1'>
+                    <h3 className='inline-flex items-center justify-center gap-x-1 font-serif text-xl  leading-none'>
                       <a className='hover:underline' href={work.link}>
                         {work.company}
                       </a>
@@ -55,7 +55,7 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-medium italic tracking-tight mb-6 font-serif w-fit'>
           Education
         </h2>
         <div className='last-of-type:pb-0'>
@@ -86,7 +86,7 @@ const AboutPage = () => {
         </div>
       </article>
       <article>
-        <h2 className='text-2xl font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text text-transparent w-fit'>
+        <h2 className='text-2xl font-medium italic tracking-tight mb-3 font-serif w-fit'>
           Skills
         </h2>
         <div className='flex flex-wrap gap-2'>
@@ -94,8 +94,8 @@ const AboutPage = () => {
             return (
               <Badge
                 key={skill}
-                className='rounded-sm shadow-sm'
-                variant={'outline'}
+                className='rounded-sm shadow-sm dark:bg-neutral-300'
+                variant={'default'}
               >
                 {skill}
               </Badge>

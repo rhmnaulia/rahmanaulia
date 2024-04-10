@@ -41,7 +41,7 @@ export default async function Page() {
             className='dark:bg-neutral-300 dark:hover:bg-neutral-100 bg-neutral-800 rounded-sm'
             asChild
           >
-            <Link href='/writing' className='font-serif'>
+            <Link href='/contact' className='font-serif'>
               Get in touch
             </Link>
           </Button>

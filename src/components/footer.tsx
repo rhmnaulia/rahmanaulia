@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='flex flex-wrap gap-x-4 gap-y-1'>
           <a
             className='inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2'
-            href='https://dribbble.com/'
+            href='https://github.com/rhmnaulia'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -13,7 +13,7 @@ const Footer = () => {
           </a>
           <a
             className='inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2'
-            href='https://instagram.com/'
+            href='https://www.linkedin.com/in/rhmnaulia/'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -21,7 +21,7 @@ const Footer = () => {
           </a>
           <a
             className='inline-flex items-center justify-center text-sm hover:underline hover:underline-offset-2'
-            href='https://twitter.com/'
+            href='https://twitter.com/rhmnaul'
             target='_blank'
             rel='noopener noreferrer'
           >

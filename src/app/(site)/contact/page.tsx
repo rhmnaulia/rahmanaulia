@@ -23,7 +23,7 @@ const ContactPage = () => {
           <strong>Social Media: </strong>
           Connect with me on social media as well. Find me on{' '}
           <a href='https://twitter.com/rhmnaul'>Twitter</a> or{' '}
-          <a href='https://www.linkedin.com/rhmnaulia'>LinkedIn</a>.
+          <a href='https://www.linkedin.com/in/rhmnaulia/'>LinkedIn</a>.
         </p>{' '}
       </div>
       <Image

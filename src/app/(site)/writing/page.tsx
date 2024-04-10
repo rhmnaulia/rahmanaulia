@@ -75,4 +75,11 @@ const WritingPage = async () => {
   )
 }
 
+export async function generateStaticParams() {
+  const getWriting = await reader.collections.writings.all()
+  return getWriting.map((writing) => ({
+    params: { slug: writing.slug },
+  }))
+}
+
 export default WritingPage

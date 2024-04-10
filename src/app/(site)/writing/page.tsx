@@ -6,9 +6,8 @@ import { Separator } from '@/components/ui/separator'
 const reader = createReader(process.cwd(), keystaticConfig)
 
 const WritingPage = async () => {
-  const writings = await reader.collections.writings.all()
-
-  const filtered = writings.sort(
+  const getWriting = await reader.collections.writings.all()
+  const writings = getWriting.sort(
     (a, b) =>
       new Date(b.entry.publishedAt).getTime() -
       new Date(a.entry.publishedAt).getTime()
@@ -40,22 +39,22 @@ const WritingPage = async () => {
 
       <section className='w-full'>
         <h2 className='sr-only'>Writings List</h2>
-        {filtered.map((writing) => (
+        {writings.map((writing) => (
           <Link
             key={writing.slug}
-            className='flex justify-between items-start gap-8 group mb-10 sm:mb-12'
+            className='flex justify-between items-start gap-8 group mb-10 text-foreground/85'
             href={`/writing/${writing.slug}`}
           >
             <div className='grow'>
-              <h3 className='text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1'>
+              <h3 className='text-xl text-foreground/85 leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1'>
                 {writing.entry.title}
               </h3>
-              <div className='mt-1 text-sm leading-normal'>
+              <div className='mt-1 text-sm text-foreground/70 leading-normal'>
                 <time dateTime='2024-01-11T00:00:00.000Z'>
                   January 11, 2024
                 </time>
               </div>
-              <div className='mt-3 text-sm leading-normal text-foreground/80'>
+              <div className='mt-3 text-sm leading-normal text-foreground/65'>
                 {writing.entry.description}
               </div>
             </div>

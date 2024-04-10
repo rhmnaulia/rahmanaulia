@@ -15,8 +15,8 @@ export const NAV_MENU_LINK = [
     path: '/writing',
   },
   {
-    label: 'About',
-    path: '/about',
+    label: 'Contact',
+    path: '/contact',
   },
 ]
 

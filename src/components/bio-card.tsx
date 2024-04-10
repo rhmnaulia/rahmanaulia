@@ -12,7 +12,7 @@ const socials = [
 
 const BioCard = () => {
   return (
-    <div className='flex items-center md:w-fit w-full mx-auto gap-6 rounded-sm flex-nowrap '>
+    <div className='flex items-center md:w-fit mt-16 w-fit p-6 bordergap-6 rounded-sm flex-nowrap '>
       <Avatar className='size-28 rounded-sm border-foreground/50 border'>
         <AvatarImage src='https://github.com/rhmnaulia.png' />
         <AvatarFallback className='size-28 rounded-2xl'>AR</AvatarFallback>

@@ -21,7 +21,6 @@ const config = {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
-        display: ['var(--font-rocksalt)'],
         serif: ['var(--font-newsreader)'],
       },
       colors: {

@@ -7,14 +7,14 @@ const reader = createReader(process.cwd(), keystaticConfig)
 
 export default async function Page() {
   const writings = await reader.collections.writings.all()
-
-  const filteredWrtings = writings.sort(
+  const latestWriting = writings.sort(
     (a, b) =>
       new Date(b.entry.publishedAt).getTime() -
       new Date(a.entry.publishedAt).getTime()
   )
+
   return (
-    <article className='flex flex-col gap-16'>
+    <article className='flex flex-col gap-14'>
       <section className='flex flex-col gap-2'>
         <span className='flex items-baseline gap-2'>
           <h1 className='text-3xl font-serif'>Aulia Rahman</h1>
@@ -24,8 +24,8 @@ export default async function Page() {
           <em className='text-pretty text-base font-serif'>
             Crafting experiences
           </em>
-          . Building polished software and web experiences. Experimenting with
-          magical details in user interfaces. Engineer at{' '}
+          , building software, and creating refined web interfaces, I am
+          committed to endless exploration. Engineer at Indonesia{' '}
           <a
             className='underline underline-offset-4 decoration-1 decoration-neutral-700 hover:decoration-neutral-500 transition-colors'
             href='https://www.linkedin.com/company/govtech-procurement'
@@ -42,7 +42,7 @@ export default async function Page() {
             asChild
           >
             <Link href='/writing' className='font-serif'>
-              Contact
+              Get in touch
             </Link>
           </Button>
           <Button
@@ -50,30 +50,34 @@ export default async function Page() {
             asChild
             className='rounded-sm border-neutral-700'
           >
-            <Link href='/about' className='font-serif'>
-              Learn more about me
-            </Link>
+            <a
+              href='https://docs.google.com/document/d/1kh7blSsBGbVJB8QAAQQvWhAgKUaiIW63GoaCTX8N-_o/edit?usp=sharing'
+              className='font-serif'
+              target='_blank'
+            >
+              Resume
+            </a>
           </Button>
         </div>
       </section>
       <section className='w-full'>
-        <h2 className=' text-2xl font-serif italic mb-6'>Writing</h2>
-        {filteredWrtings.map((writing) => (
+        <h2 className='text-2xl font-medium font-serif mb-6'>Latest writing</h2>
+        {latestWriting.map((writing) => (
           <Link
             key={writing.slug}
-            className='flex justify-between items-start gap-8 group mb-10'
+            className='flex justify-between items-start gap-8 group mb-10 text-foreground/85'
             href={`/writing/${writing.slug}`}
           >
             <div className='grow'>
-              <h3 className='text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1'>
+              <h3 className='text-xl text-foreground/85 leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1'>
                 {writing.entry.title}
               </h3>
-              <div className='mt-1 text-sm leading-normal'>
+              <div className='mt-1 text-sm text-foreground/70 leading-normal'>
                 <time dateTime='2024-01-11T00:00:00.000Z'>
                   January 11, 2024
                 </time>
               </div>
-              <div className='mt-3 text-sm leading-normal text-foreground/80'>
+              <div className='mt-3 text-sm leading-normal text-foreground/65'>
                 {writing.entry.description}
               </div>
             </div>

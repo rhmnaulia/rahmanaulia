@@ -23,7 +23,6 @@ export const NAV_MENU_LINK = [
 export function Navbar() {
   let pathname = usePathname()
 
-  // Simplify pathname adjustment
   pathname = pathname.startsWith('/writing/') ? '/writing' : pathname
 
   function getLinkClassName(isActive: boolean) {
@@ -43,10 +42,10 @@ export function Navbar() {
       >
         {NAV_MENU_LINK.map((menu) => (
           <Link
-            key={menu.path} // Use menu.path as a key for better uniqueness
+            key={menu.path}
             href={menu.path}
             className={getLinkClassName(pathname === menu.path)}
-            aria-label={menu.label} // Improve accessibility
+            aria-label={menu.label}
           >
             {menu.label}
           </Link>

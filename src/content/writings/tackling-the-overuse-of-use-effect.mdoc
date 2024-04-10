@@ -1,0 +1,120 @@
+---
+cover: /assets/writings/tackling-the-overuse-of-use-effect/cover.jpg
+title: Tackling the Overuse of useEffect
+description: >-
+  We've all been there—overusing useEffect because it seems to solve all our
+  problems. But there's a catch. This article will help you understand when and
+  how to use useEffect effectively, so your React apps run smoother and your
+  code stays clean.
+publishedAt: 2024-03-10
+draft: false
+redirect:
+  discriminant: false
+---
+React.js has revolutionized the way we build web applications, providing a flexible and efficient framework for developing user interfaces. Among its array of hooks, `useEffect` stands out as a powerful tool for performing side effects in functional components. However, its versatility can sometimes lead to overuse, which might introduce complexity and inefficiencies in your codebase. In this post, we'll explore the overuse of `useEffect`, its implications, and how to use it judiciously.
+
+## Understanding `useEffect`
+
+Before diving into the overuse, let's quickly recap what `useEffect` does. This hook allows you to perform side effects in your components, such as data fetching, subscriptions, or manually changing the DOM from React components. It takes two arguments: a function that contains the side-effect logic and an optional array of dependencies.
+
+```typescript
+useEffect(() => {
+  // Side effect logic here
+}, [dependencies]);
+```
+
+## Signs of Overuse
+
+The overuse of `useEffect` can manifest in several ways, such as:
+
+1. **Excessive Side Effects**: Implementing too many side effects within a single component, making the component difficult to understand and maintain.
+1. **Mismanaged Dependencies**: Incorrectly specifying or omitting dependencies in the dependency array, leading to bugs or unnecessary re-renders.
+1. **Unnecessary Network Requests**: Triggering more network requests than needed due to mismanaged dependencies or logic within `useEffect`.
+
+## Consequences of Overuse
+
+Overusing `useEffect` can lead to several issues, including:
+
+- **Performance Issues**: Unnecessary re-renders or network requests can slow down your app.
+- **Maintainability Challenges**: Components cluttered with side effects are harder to maintain and understand.
+- **Bug Prone**: Incorrect dependency handling can introduce subtle bugs, especially in complex components.
+
+## Code Example: Overuse of `useEffect`
+
+Consider a component that fetches user data, updates document title, and listens to window resize events all within a single `useEffect`.
+
+```typescript
+import React, { useState, useEffect } from 'react';
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Fetch user data
+    fetch(`https://api.example.com/users/${userId}`)
+      .then(response => response.json())
+      .then(data => setUser(data));
+
+    // Update document title
+    document.title = user ? user.name : 'Loading...';
+
+    // Listen to window resize
+    const handleResize = () => console.log(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, [userId, user]); // Mismanaged dependencies
+
+  // Component UI
+  return (
+    <div>
+      {/* User profile UI */}
+    </div>
+  );
+}
+```
+
+## Best Practices to Avoid Overuse
+
+1. **Separate Concerns**: Break down your effects based on their purpose. Use multiple `useEffect` hooks to separate different types of side effects.
+1. **Correct Dependency Management**: Ensure your dependency array accurately reflects all variables and props that your effect depends on.
+1. **Use Custom Hooks**: Encapsulate reusable logic in custom hooks to reduce the complexity within components.
+
+## Refactored Code Example
+
+```typescript
+import React, { useState, useEffect } from 'react';
+
+function UserProfile({ userId }) {
+  const [user, setUser] = useState(null);
+
+  // Fetch user data
+  useEffect(() => {
+    fetch(`https://api.example.com/users/${userId}`)
+      .then(response => response.json())
+      .then(data => setUser(data));
+  }, [userId]);
+
+  // Update document title
+  useEffect(() => {
+    document.title = user ? user.name : 'Loading...';
+  }, [user]);
+
+  // Listen to window resize
+  useEffect(() => {
+    const handleResize = () => console.log(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return (
+    <div>
+      {/* User profile UI */}
+    </div>
+  );
+}
+```
+
+## Conclusion
+
+`useEffect` is a powerful hook in React.js, but like any tool, it must be used with care. By understanding the signs of overuse and adhering to best practices, you can ensure your React applications remain performant, maintainable, and bug-free.

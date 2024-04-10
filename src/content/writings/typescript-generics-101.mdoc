@@ -1,0 +1,94 @@
+---
+cover: /assets/writings/typescript-generics-101/cover.jpg
+title: Typescript Generics 101
+description: ' Feeling baffled by TypeScript generics? You''re not alone. This clear-cut guide is designed to walk you through the basics, so you can start using generics confidently. No jargon, no fluff—just the essentials that you can apply to your projects right away.'
+publishedAt: 2024-03-11
+draft: false
+redirect:
+  discriminant: false
+---
+TypeScript generics are a powerful feature that allow you to create reusable code components that work with a variety of types instead of a single one. This article will introduce you to the basics of TypeScript generics, including how they work, why they are useful, and how to use them in your TypeScript projects.
+
+## Understanding Generics
+
+Generics provide a way to create components that can work over a variety of types rather than a single one. This means you can write a function, class, or interface that can operate on any data type, making your code more flexible and reusable.
+
+### Why Use Generics?
+
+- **Type Safety:** Generics provide a way to ensure type safety without losing the flexibility of using any type. This means you can catch errors at compile time rather than at runtime.
+- **Code Reusability:** You can write a piece of code once and use it with different types, reducing duplication and errors.
+- **Better Code Readability:** Generics help to convey the intention of your code more clearly, making it easier for others (and yourself) to understand.
+
+## Basic Syntax
+
+A generic is defined using angle brackets (`<>`) with a type variable inside. This type variable can then be used throughout your component (like a function, class, or interface) to denote a type that will be specified later.
+
+### Function Example
+
+Here's a simple example of a generic function that returns an array of any type:
+
+```typescript
+function identity<T>(arg: T): T {
+    return arg;
+}
+```
+
+You can call this function with any type:
+
+```typescript
+let outputString = identity<string>("myString");
+let outputNumber = identity<number>(100);
+```
+
+### Class Example
+
+Generics can also be used with classes. Here’s an example of a generic class:
+
+```typescript
+class GenericNumber<T> {
+    zeroValue: T;
+    add: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function(x, y) { return x + y; };
+```
+
+### Interface Example
+
+You can also define generic interfaces:
+
+```typescript
+interface GenericIdentityFn<T> {
+    (arg: T): T;
+}
+
+function identity<T>(arg: T): T {
+    return arg;
+}
+
+let myIdentity: GenericIdentityFn<number> = identity;
+```
+
+## Constraints
+
+Sometimes, you might want to limit the types that can be used with your generics. This is where constraints come in. You can define a constraint using the `extends` keyword:
+
+```typescript
+function loggingIdentity<T extends { length: number }>(arg: T): T {
+    console.log(arg.length);
+    return arg;
+}
+```
+
+This function can now be called with any type that has a `length` property:
+
+```typescript
+loggingIdentity({length: 10, value: 3}); // OK
+loggingIdentity(3); // Error, number doesn't have a `length` property
+```
+
+## Conclusion
+
+TypeScript generics offer a flexible way to ensure type safety while maintaining code reusability and readability. By understanding and utilizing generics, you can write more efficient and scalable TypeScript code. Start experimenting with generics in your TypeScript projects and see the benefits for yourself!

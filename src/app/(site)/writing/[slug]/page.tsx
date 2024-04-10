@@ -6,9 +6,21 @@ import { ArrowLeft } from 'lucide-react'
 import { getArticleRenderers } from '@/components/keystatic/renderer'
 import formatDate from '@/lib/format-date'
 import { Separator } from '@/components/ui/separator'
-import { useTheme } from 'next-themes'
+
+interface Props {
+  params: {
+    slug: string
+  }
+}
+
+export const dynamicParams = false
 
 const reader = createReader(process.cwd(), keystaticConfig)
+
+export async function generateStaticParams(): Promise<Props['params'][]> {
+  const writings = await reader.collections.writings.all()
+  return writings.map(({ slug }) => ({ slug }))
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const renderers = getArticleRenderers()

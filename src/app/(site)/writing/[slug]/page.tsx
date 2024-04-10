@@ -6,6 +6,7 @@ import { ArrowLeft } from 'lucide-react'
 import { getArticleRenderers } from '@/components/keystatic/renderer'
 import formatDate from '@/lib/format-date'
 import { Separator } from '@/components/ui/separator'
+import { useTheme } from 'next-themes'
 
 const reader = createReader(process.cwd(), keystaticConfig)
 
@@ -46,7 +47,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
       <Separator className='my-3' />
 
-      <section className='w-full prose-sm md:prose-base prose-h1:first-of-type:text-teal-400 prose-h1:first-of-type:text-center prose-h1:text-pretty prose dark:prose-invert'>
+      <section className='w-full prose-sm prose-h1:first-of-type:text-center prose-h1:text-pretty prose dark:prose-invert'>
         <DocumentRenderer
           document={await writings.content()}
           renderers={renderers}

@@ -121,7 +121,7 @@ export default config({
           links: true,
           images: {
             directory: 'public/assets/writings',
-            publicPath: '/assets/articles',
+            publicPath: '/assets/writings',
           },
           layouts: [[1], [1, 1], [1, 2], [2, 1]],
         }),

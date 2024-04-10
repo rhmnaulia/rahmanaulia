@@ -16,8 +16,8 @@ const ContactPage = () => {
         <p>
           <strong>Email: </strong>
           Feel free to drop me an email at{' '}
-          <a href='rahmanauliax@gmail.com'>rahmanauliax@gmail.com</a>, and I’ll
-          do my best to respond as soon as possible.
+          <a href='mailto:rahmanauliax@gmail.com'>rahmanauliax@gmail.com</a>,
+          and I’ll do my best to respond as soon as possible.
         </p>
         <p>
           <strong>Social Media: </strong>

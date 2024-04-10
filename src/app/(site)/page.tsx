@@ -96,8 +96,11 @@ export default async function Page() {
         <Button
           className='border-neutral-600 rounded-sm font-serif'
           variant={'outline'}
+          asChild
         >
-          View all posts
+          <Link href='/writing' className='font-serif'>
+            View all posts
+          </Link>
         </Button>
       </section>
     </article>

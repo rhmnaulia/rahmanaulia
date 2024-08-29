@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { createReader } from '@keystatic/core/reader'
 import keystaticConfig from '../../../../keystatic.config'
 import { Separator } from '@/components/ui/separator'
+import formatDate from '@/lib/format-date'
 
 const reader = createReader(process.cwd(), keystaticConfig)
 
@@ -50,8 +51,8 @@ const WritingPage = async () => {
                 {writing.entry.title}
               </h3>
               <div className='mt-1 text-sm text-foreground/70 leading-normal'>
-                <time dateTime='2024-01-11T00:00:00.000Z'>
-                  January 11, 2024
+                <time dateTime={writing.entry.publishedAt}>
+                  {formatDate(writing.entry.publishedAt)}
                 </time>
               </div>
               <div className='mt-3 text-sm leading-normal text-foreground/65'>

@@ -1,0 +1,79 @@
+---
+title: 'Learning Rust: Variables & Types'
+description: >-
+  My notes from learning Rust. Might be rough, but better to share them than
+  leave them collecting dust in Obsidian.
+publishedAt: 2024-11-20
+draft: false
+redirect:
+  discriminant: false
+---
+# Learning Rust: Variables & Types
+
+## Variables
+
+From variables1-6:
+
+```
+// variables1.rs - got this first try
+let x = 5; 
+
+// variables2.rs - just add mut
+let mut x = 5;
+x = 6;
+
+// variables3.rs - type annotation
+let x: i32 = 42;
+```
+
+Default immutability feels natural coming from functional programming.
+
+## Types
+
+Working through primitives section:
+
+```
+// Numbers from primitives1.rs
+let a: i32 = -15;   
+let b: u32 = 120;   
+let c = 1000;       // i32 by default
+
+// Quick note on signed vs unsigned:
+// i8: -128 to 127 (can store negative)
+// u8: 0 to 255 (only positive)
+// Same pattern for i16/u16, i32/u32, i64/u64
+// u = unsigned (≥0), i = signed (+ or -)
+
+// Chars/bools from primitives2.rs 
+let my_char = 'x';
+let is_true = false;
+```
+
+Good explanation of integer overflow in the book that wasn't covered in rustlings.
+
+## Strings
+
+Strings section:
+
+```
+// strings1.rs
+let word = String::from("green");     // needed .from()
+let string_slice = "blue";            // &str literal
+
+// strings2.rs 
+let word = String::from("green");
+&word                                 // borrowing - more on this later
+```
+
+The ownership concept with Strings makes sense - looking forward to diving deeper into that.
+
+## Todo
+
+Need to cover:
+
+- Finish last variables exercises
+- Deep dive into functions
+- Revisit String vs &str when hitting ownership
+- Try some small projects with these basics
+
+*Next: Functions and Control Flow*

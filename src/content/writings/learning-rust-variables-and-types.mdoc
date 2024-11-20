@@ -65,7 +65,48 @@ let word = String::from("green");
 &word                                 // borrowing - more on this later
 ```
 
-The ownership concept with Strings makes sense - looking forward to diving deeper into that.
+The ownership concept with Strings makes sense - looking forward to diving deeper into that.\
+
+## Collections - Vec
+
+Vec is like a dynamic array/list (similar to TypeScript's Array):
+
+```rust
+// Creating vectors
+let v: Vec<i32> = Vec::new();        // empty vector
+let v = vec![1, 2, 3];               // with macro
+let mut v = Vec::new();              // mutable empty vector
+
+// Adding elements (if mutable)
+v.push(4);
+v.push(5);
+
+// Accessing elements - two ways:
+let third = &v[2];                   // might panic if index out of bounds
+let third = v.get(2);                // returns Option<&T>
+
+// Iterating
+for i in &v {
+    println!("{}", i);
+}
+
+// Common methods
+v.pop();                             // removes and returns last element
+v.len();                             // get length
+v.clear();                           // remove all elements
+```
+
+Key points about Vec:
+
+- Generic type - Vec<T> can hold any type
+- Grows automatically
+- Stored on heap
+- Like String, follows ownership rules
+
+Note: Vec vs array in Rust:
+
+- Vec: dynamic size, heap
+- Array: fixed size [T; N], stack
 
 ## Todo
 

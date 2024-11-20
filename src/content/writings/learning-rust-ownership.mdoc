@@ -1,0 +1,89 @@
+---
+title: 'Learning Rust: Ownership'
+description: >-
+  My notes from learning Rust. Might be rough, but better to share them than
+  leave them collecting dust in Obsidian.
+publishedAt: 2024-11-20
+draft: false
+redirect:
+  discriminant: false
+---
+This is where Rust gets unique. Ownership rules are weird coming from any other language.
+
+## Core Rules
+
+From rustlings move_semantics:
+
+```rust
+// move_semantics1.rs
+let vec0 = Vec::new();
+let vec1 = vec0;        // vec0 is moved here
+println!("{}", vec0);   // error: vec0 is gone
+
+// This works:
+let vec0 = Vec::new();
+let vec1 = vec0.clone(); // explicit clone
+println!("{:?}", vec0);  // vec0 still alive
+```
+
+Three main rules clicked after some practice:
+
+1. Each value has one owner
+1. When owner goes out of scope, value is dropped
+1. Can only have one mutable reference OR many immutable references
+
+## References & Borrowing
+
+References were tricky at first:
+
+```rust
+// references1.rs
+let x = 5;
+let y = &x;      // immutable borrow
+println!("{}", *y);  // need to deref
+
+// references2.rs
+let mut s = String::from("hello");
+change(&mut s);   // mutable borrow
+
+fn change(s: &mut String) {
+    s.push_str(" world");
+}
+```
+
+Key things about references:
+
+- & means borrow
+- &mut for mutable borrow
+- Can't have mutable + immutable refs at same time
+- References must be valid (no dangling)
+
+## Slice Type
+
+String slices make more sense now:
+
+```rust
+let s = String::from("hello world");
+let hello = &s[0..5];  // slice from 0 to 5
+let world = &s[6..];   // slice from 6 to end
+```
+
+They're just references to part of the string - no ownership.
+
+## Notes & Gotchas
+
+Things to remember:
+
+- Clone when you need a copy
+- References prevent moves
+- Watch scope of borrowed values
+- String literals are &str slices
+- Vec<T> follows same rules
+
+Still need to practice:
+
+- Lifetimes (coming up next)
+- Complex ownership scenarios
+- When to use Box<T>
+
+*Next: Structs and Methods*

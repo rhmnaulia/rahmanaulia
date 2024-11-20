@@ -1,0 +1,104 @@
+---
+title: 'Learning Rust: Functions and Control Flow'
+description: >-
+  My notes from learning Rust. Might be rough, but better to share them than
+  leave them collecting dust in Obsidian.
+publishedAt: 2024-11-20
+draft: false
+redirect:
+  discriminant: false
+---
+# Functions and Control Flow in Rust
+
+Moving on to functions and control flow. First part was pretty basic, this gets a bit more interesting.
+
+## Functions
+
+Basic syntax is familiar:
+
+```rust
+// functions1.rs
+fn call_me() {
+    println!("called!");
+}
+
+// functions2.rs - return types are explicit
+fn get_number() -> i32 {
+    5  // no semicolon = return value
+}
+
+// functions3.rs - parameters need type annotations
+fn add(x: i32, y: i32) -> i32 {
+    x + y  // expression returns directly
+}
+```
+
+Interesting how expressions vs statements work - had to fix this in functions4.rs:
+
+```rust
+// Wrong
+fn returns_one() -> i32 {
+    1;  // semicolon makes it a statement
+}
+
+// Right
+fn returns_one() -> i32 {
+    1  // expression returns value
+}
+```
+
+## Control Flow
+
+if/else is straightforward but no parentheses needed:
+
+```rust
+// if1.rs
+let number = 5;
+if number > 3 {
+    println!("bigger")
+} else {
+    println!("smaller")
+}
+```
+
+Loops are interesting - three types:
+
+```rust
+// loop1.rs - infinite loop with break
+let mut counter = 0;
+loop {
+    counter += 1;
+    if counter == 10 {
+        break;
+    }
+}
+
+// while loops work as expected
+while counter < 10 {
+    counter += 1;
+}
+
+// for loops are clean
+for x in 0..10 {
+    println!("{}", x);
+}
+```
+
+The `for` loop with iterators is really nice compared to C-style loops.
+
+## Notes to Remember
+
+- Function parameters always need type annotations
+- Return type uses ->
+- Expression vs statement distinction matters
+- No parentheses needed in if conditions
+- loop can have labels - useful for breaking nested loops
+- `for x in something` is the main loop pattern
+
+Need to practice:
+
+- More complex return types
+- Using labeled breaks in nested loops
+- Pattern matching with if let
+
+*Next: Moving on to Ownership (this is where it gets real...)*

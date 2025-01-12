@@ -32,6 +32,7 @@ const ContactPage = () => {
         alt='the gif'
         height={800}
         width={800}
+        priority
       />
     </section>
   )

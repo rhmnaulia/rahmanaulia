@@ -54,9 +54,10 @@ export default async function Page() {
             className='rounded-sm border-neutral-700'
           >
             <a
-              href='https://docs.google.com/document/d/1kh7blSsBGbVJB8QAAQQvWhAgKUaiIW63GoaCTX8N-_o/edit?usp=sharing'
+              href='https://docs.google.com/document/d/1-BykUZPGyTBJnp0hql2SuhE0VdSk1DCyIVe5uNU-kiI/edit?usp=sharing'
               className='font-serif'
               target='_blank'
+              rel='noopener noreferrer'
             >
               Resume
             </a>

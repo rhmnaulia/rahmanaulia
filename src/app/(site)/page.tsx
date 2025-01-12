@@ -8,11 +8,13 @@ const reader = createReader(process.cwd(), keystaticConfig)
 
 export default async function Page() {
   const writings = await reader.collections.writings.all()
-  const latestWriting = writings.sort(
-    (a, b) =>
-      new Date(b.entry.publishedAt).getTime() -
-      new Date(a.entry.publishedAt).getTime()
-  )
+  const latestWriting = writings
+    .sort(
+      (a, b) =>
+        new Date(b.entry.publishedAt).getTime() -
+        new Date(a.entry.publishedAt).getTime()
+    )
+    .slice(0, 5)
 
   return (
     <article className='flex flex-col gap-14'>

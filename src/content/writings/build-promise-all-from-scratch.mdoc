@@ -1,0 +1,116 @@
+---
+cover: /assets/writings/build-promise-all-from-scratch/cover.png
+title: Build Promise.all() From Scratch
+description: >-
+  A behind-the-scenes look at implementing Promise.all() from scratch. This post
+  breaks down how a promise handling function actually works - from the initial
+  challenge through to a working solution. Whether you're curious about promises
+  or want to understand what happens under the hood, join me in rebuilding this
+  essential JavaScript utility.
+publishedAt: 2025-01-12
+draft: false
+redirect:
+  discriminant: false
+---
+Last week I got curious about how Promise.all() works behind the scenes. Instead of just reading the docs, I decided to build it from scratch.
+
+## The Challenge
+
+The core idea is simple - it takes an array of promises and waits for all of them to resolve. But how do you actually track multiple promises at once while maintaining their order?
+
+## My First Attempt
+
+I started with what I knew - a new Promise that would wrap everything:
+
+```javascript
+function promiseAll(iterable) {
+  return new Promise((resolve, reject) => {
+    // But what goes here? 🤔
+  });
+}
+```
+
+I needed to track results and know when everything was finished. After some thought, I figured I'd need:
+
+- An array to store results
+- A way to count unfinished promises
+
+```javascript
+const results = new Array(iterable.length);
+let unresolved = iterable.length;
+```
+
+## The Breakthrough
+
+Each promise needed to:
+
+1. Store its result in the right spot
+1. Tell us when it's done
+1. Not mess up if other promises finish first
+
+Here's what I came up with:
+
+```javascript
+function promiseAll(iterable) {
+  return new Promise((resolve, reject) => {
+    const results = new Array(iterable.length);
+    let unresolved = iterable.length;
+
+    if (unresolved === 0) {
+      resolve(results);
+      return;
+    }
+
+    iterable.forEach(async (item, index) => {
+      try {
+        const value = await item;
+        results[index] = value;
+        unresolved -= 1;
+
+        if (unresolved === 0) {
+          resolve(results);
+        }
+      } catch (err) {
+        reject(err);
+      }
+    });
+  });
+}
+```
+
+The `unresolved` counter was key here. When it hits zero, we know every promise has finished. And using `forEach` with the index let me keep everything in order.
+
+## The Edge Cases
+
+I had to handle a few things:
+
+- Empty arrays
+- Immediate rejection if any promise fails
+- Maintaining the original order
+
+## Testing It Out
+
+Here's a quick test:
+
+```javascript
+const promises = [
+  Promise.resolve(1),
+  Promise.resolve(2),
+  new Promise(r => setTimeout(() => r(3), 100))
+];
+
+promiseAll(promises)
+  .then(results => console.log(results));  // [1, 2, 3]
+```
+
+It worked! Even with promises that resolved at different times, everything came back in order.
+
+## What I Learned
+
+Building Promise.all() helped me understand:
+
+- The mechanics behind promise handling
+- How to track multiple async operations
+- Sometimes a simple counter is all you need
+
+Next time you use Promise.all(), you'll know there's just a counter and array making it all work.

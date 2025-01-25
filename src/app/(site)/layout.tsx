@@ -58,10 +58,6 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // verification: {
-  //   google: 'YourGoogleVerificationCode',
-  //   yandex: 'YourYandexVerificationCode',
-  // },
 }
 
 const NewsreaderFont = Newsreader({

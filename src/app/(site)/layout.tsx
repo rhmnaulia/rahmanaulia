@@ -63,7 +63,8 @@ const NewsreaderFont = Newsreader({
   variable: '--font-newsreader',
   subsets: ['latin'],
   display: 'swap',
-  weight: '400',
+  weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 const IbmPlexMonoFont = IBM_Plex_Mono({
@@ -71,6 +72,7 @@ const IbmPlexMonoFont = IBM_Plex_Mono({
   subsets: ['latin'],
   display: 'swap',
   weight: ['400', '500', '600', '700'],
+  style: ['normal', 'italic'],
 })
 
 export default function RootLayout({

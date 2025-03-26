@@ -7,10 +7,22 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rahmanaulia.com/blog</loc>
+    <loc>https://rahmanaulia.com/writing</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rahmanaulia.com/writing?page=2</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rahmanaulia.com/writing?page=3</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://rahmanaulia.com/projects</loc>

@@ -20,7 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
-        mono: ['var(--font-geist-mono)'],
+        mono: ['var(--font-ibm-plex-mono)'],
         serif: ['var(--font-newsreader)'],
       },
       colors: {

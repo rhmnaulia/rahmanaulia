@@ -11,7 +11,7 @@ type Props = Omit<ComponentProps<'div'>, 'children'> & {
 export async function Shiki({ code, language, ...props }: Props) {
   const __html = await codeToHtml(code, {
     lang: language,
-    theme: 'vitesse-dark',
+    theme: 'dark-plus',
   })
   return <div {...props} dangerouslySetInnerHTML={{ __html }} />
 }

@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { cx } from 'class-variance-authority'
 import { ThemeProvider } from '@/components/theme-provider'
-import { Newsreader } from 'next/font/google'
-import { GeistMono } from 'geist/font/mono'
+import { Newsreader, IBM_Plex_Mono } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 
 import { Navbar } from '@/components/navbar'
@@ -119,6 +118,13 @@ const NewsreaderFont = Newsreader({
   weight: '400',
 })
 
+const IbmPlexMonoFont = IBM_Plex_Mono({
+  variable: '--font-ibm-plex-mono',
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '500', '600', '700'],
+})
+
 export default function RootLayout({
   children,
 }: {
@@ -129,7 +135,7 @@ export default function RootLayout({
       lang='en'
       className={cx(
         GeistSans.variable,
-        GeistMono.variable,
+        IbmPlexMonoFont.variable,
         NewsreaderFont.variable
       )}
     >

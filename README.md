@@ -78,8 +78,4 @@ The website is deployed on Vercel. Make sure to set up the required environment 
 
 ## License
 
-This project is private and not licensed for public use.
-
----
-
-This version makes it clear that the project is a solo endeavor, emphasizing a personal touch. Let me know if there's anything else you'd like to adjust!
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
